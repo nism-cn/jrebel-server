@@ -1,0 +1,71 @@
+package org.nism.jrebel.servlet;
+
+import com.alibaba.fastjson2.JSONObject;
+import org.nism.jrebel.core.C;
+import org.nism.jrebel.core.E;
+import org.nism.jrebel.core.Sign;
+
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
+public class JrebelLeasesServlet extends HttpServlet {
+
+    @Override
+    public void service(ServletRequest request, ServletResponse res) throws IOException, ServletException {
+        HttpServletResponse response = null;
+        if (res instanceof HttpServletResponse) {
+            response = (HttpServletResponse) res;
+        } else {
+            throw new ServletException("non-HTTP request or response");
+        }
+        response.setContentType(C.CONTENT_TYPE_JSON);
+        String clientRandomness = request.getParameter("randomness");
+        String username = request.getParameter("username");
+        String guid = request.getParameter("guid");
+
+        boolean offline = Boolean.parseBoolean(request.getParameter("offline"));
+        String validFrom = "0";
+        String validUntil = "0";
+        if (offline) {
+            String clientTime = request.getParameter("clientTime");
+            long clientTimeUntil = Long.parseLong(clientTime) + 180L * 24 * 60 * 60 * 1000;
+            validFrom = clientTime;
+            validUntil = String.valueOf(clientTimeUntil);
+        }
+        E e = new E();
+        e.setServerVersion(C.SERVER_VERSION);
+        e.setServerProtocolVersion(C.SERVER_PROTOCOL_VERSION);
+        e.setServerGuid(C.SERVER_GUID);
+        e.setGroupType(C.GROUP_TYPE);
+        e.setId(C.ID);
+        e.setLicenseType(C.LICENSE_TYPE);
+        e.setEvaluationLicense(C.EVALUATION_LICENSE);
+        e.setSignature(C.SIGNATURE);
+        e.setServerRandomness(C.SERVER_RANDOMNESS);
+        e.setSeatPoolType(C.SEAT_POOL_TYPE);
+        e.setStatusCode(C.STATUS_CODE);
+        e.setOffline(offline);
+        e.setValidFrom(Long.parseLong(validFrom));
+        e.setValidUntil(Long.parseLong(validUntil));
+        e.setCompany(C.COMPANY);
+        e.setOrderId(C.ORDER_ID);
+        e.setZeroIds(C.ZERO_IDS);
+        e.setLicenseValidFrom(C.LICENSE_VALID_FROM);
+        e.setLicenseValidUntil(C.LICENSE_VALID_UNTIL);
+
+        if (clientRandomness == null || username == null || guid == null) {
+            response.setStatus(HttpServletResponse.SC_FORBIDDEN);
+        } else {
+            Sign sign = new Sign();
+            sign.create(clientRandomness, guid, offline, validFrom, validUntil);
+            String signature = sign.getSignature();
+            e.setSignature(signature);
+            e.setCompany(username);
+            response.getWriter().print(JSONObject.toJSONString(e));
+        }
+    }
+}
