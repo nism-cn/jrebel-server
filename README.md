@@ -6,19 +6,24 @@
 
 # 使用教程
 
-1. 克隆本项目，根据个性化需求修改，打成jar包，或者到这里[直接下载]()
+1. 克隆本项目，根据个性化需求修改，打成jar包，或者到这里[直接下载](JrebelServer.jar)
    ``` bash
    mvn clean package
    ```
 
-2. 进入到jar包所在目录，执行(默认端口80)：
+2. 进入到jar包所在目录，执行(默认端口8080)：
    ``` bash
-   java -jar JrebelServer.jar -p 80
+   java -jar JrebelServer.jar -p 8080
    ```
 
-3. 通过浏览器访问ip
+3. 通过浏览器访问ip  
+   <img src="img/1.start-server.jpeg" style="zoom:50%">
 
-4. idea 配置
+4. idea 配置  
+   <img src="img/2.setting-begin.jpeg" style="zoom:50%">
+
+5. 愉快使用  
+   <img src="img/3.setting-success.jpeg" style="zoom:50%">
 
 # 修改内容
 

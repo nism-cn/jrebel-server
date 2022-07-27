@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * main util
+ *
  * @author inism
  */
 public class MainUtil {

@@ -6,6 +6,7 @@ import org.eclipse.jetty.server.Request;
 import org.eclipse.jetty.server.handler.AbstractHandler;
 import org.eclipse.jetty.util.log.Log;
 import org.eclipse.jetty.util.log.Logger;
+import org.nism.jrebel.util.RandomEmail;
 import org.nism.jrebel.util.Rsa;
 
 import javax.servlet.http.HttpServletRequest;
@@ -15,6 +16,8 @@ import java.util.Calendar;
 import java.util.UUID;
 
 /**
+ * main handler
+ *
  * @author inism
  */
 public class MainHandler extends AbstractHandler {
@@ -187,12 +190,13 @@ public class MainHandler extends AbstractHandler {
         String html = "<!DOCTYPE html><html lang='zh'>" +
                 "<head>" + "<title>JrebelServer</title>" + C.FAVICON_LINK + C.HTML_CSS + "</head>" +
                 "<body class='n'>" +
-                "<h1 class='b w n p2'><img style='margin-top: 7px' src='" + C.FAVICON + "'> 您在浏览的是JetBrains License Server服务!</h1>" +
+                "<h1 class='b w n p2'><img style='margin-top: 7px' src='" + C.FAVICON + "'> 您在浏览的是 JetBrains License Server 服务!</h1>" +
                 "<p>&nbsp;</p>" +
                 "<p>JRebel 7.1 及旧版本激活地址:  <b class='r'>" + licenseUrl + "/{token}</b>, 以及任意邮箱地址。</p>" +
                 "<p>JRebel 2018.1+ 版本激活地址: <b class='r'>" + licenseUrl + "/{guid} </b>, 以及任意邮箱地址。</p>" +
                 "<p>(例: 👉<a href='javascript:void(0)' onclick='fn(this)'>" + licenseUrl + "/" + UUID.randomUUID() + "</a> 👈点我复制并刷新)</p>" +
-                "<div class='f'>&copy;2022-" + Calendar.getInstance().get(Calendar.YEAR) + " All Right Reserved.</div>" +
+                "<p>(随机邮箱: 👉<a href='javascript:void(0)' onclick='fn(this)'>" + RandomEmail.get() + "</a> 👈点我复制并刷新)</p>" +
+                "<div class='b w f'>&copy;2022-" + Calendar.getInstance().get(Calendar.YEAR) + " All Right Reserved.</div>" +
                 "</body>" + C.HTML_JS + "</html>";
 
         response.getWriter().println(html);

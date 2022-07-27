@@ -4,6 +4,8 @@ import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 
 /**
+ * byte util
+ *
  * @author inism
  */
 public class ByteUtil {
