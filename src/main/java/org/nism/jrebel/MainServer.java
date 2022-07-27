@@ -1,7 +1,8 @@
 package org.nism.jrebel;
 
 import org.eclipse.jetty.server.Server;
-import org.nism.jrebel.core.MainHandler;
+import org.eclipse.jetty.webapp.WebAppContext;
+import org.nism.jrebel.servlet.*;
 import org.nism.jrebel.util.MainUtil;
 
 import java.util.Map;
@@ -24,7 +25,26 @@ public class MainServer {
         }
 
         Server server = new Server(Integer.parseInt(port));
-        server.setHandler(new MainHandler());
+
+        WebAppContext app = new WebAppContext();
+        app.setContextPath("/");
+        app.setResourceBase("src/main/webapp");
+
+        app.setParentLoaderPriority(true);
+
+        app.addServlet(IndexServlet.class, "/");
+        app.addServlet(JrebelLeasesServlet.class, "/jrebel/leases");
+        app.addServlet(JrebelLeasesServlet.class, "/agent/leases");
+        app.addServlet(JrebelLeases1Servlet.class, "/jrebel/leases/1");
+        app.addServlet(JrebelLeases1Servlet.class, "/agent/leases/1");
+        app.addServlet(PingServlet.class, "/rpc/ping.action");
+        app.addServlet(JrebelValidateServlet.class, "/jrebel/validate-connection");
+        app.addServlet(ObtainTicketServlet.class, "/rpc/obtainTicket.action");
+        app.addServlet(ReleaseTicketServlet.class, "/rpc/releaseTicket.action");
+
+        server.setHandler(app);
+        server.setStopAtShutdown(true);
+
         server.start();
 
         System.out.println("License Server started at http://localhost:" + port);
