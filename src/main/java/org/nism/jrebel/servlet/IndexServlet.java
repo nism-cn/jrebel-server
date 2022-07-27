@@ -26,13 +26,13 @@ public class IndexServlet extends HttpServlet {
         String licenseUrl = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort();
 
         String html = "<!DOCTYPE html><html lang='zh'>" +
-                "<head>" + "<title>JrebelServer</title>" + FAVICON_LINK + HTML_CSS + "</head>" +
+                "<head>" + "<title>JRebel Server</title>" + FAVICON_LINK + HTML_CSS + "</head>" +
                 "<body class='n'>" +
-                "<h1 class='b w n p2'><img style='margin-top: 7px' src='" + FAVICON + "'> 您在浏览的是 JetBrains License Server 服务!</h1>" +
+                "<h1 class='b w n p2'><img style='margin-top: 7px' src='" + FAVICON + "'> 您在浏览的是 JRebel & XRebel License Server 服务!</h1>" +
                 "<p>&nbsp;</p>" +
                 "<p>JRebel 7.1 及旧版本激活地址:  <b class='r'>" + licenseUrl + "/{token}</b>, 以及任意邮箱地址。</p>" +
                 "<p>JRebel 2018.1+ 版本激活地址: <b class='r'>" + licenseUrl + "/{guid} </b>, 以及任意邮箱地址。</p>" +
-                "<p>(例: 👉<a href='javascript:void(0)' onclick='fn(this)'>" + licenseUrl + "/" + UUID.randomUUID() + "</a> 👈点我复制并刷新)</p>" +
+                "<p>(例: 👉<a href='javascript:void(0)' onclick='fn(this)'>" + licenseUrl + "/" + UUID.randomUUID() + "</a> 👈)</p>" +
                 "<p>(随机邮箱: 👉<a href='javascript:void(0)' onclick='fn(this)'>" + RandomEmail.get() + "</a> 👈点我复制并刷新)</p>" +
                 "<div class='b w f'>&copy;2022-" + Calendar.getInstance().get(Calendar.YEAR) + " All Right Reserved.</div>" +
                 "</body>" + HTML_JS + "</html>";
