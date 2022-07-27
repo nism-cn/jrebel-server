@@ -10,6 +10,8 @@ import java.security.Signature;
 import java.security.spec.PKCS8EncodedKeySpec;
 
 /**
+ * jrebel generator
+ *
  * @author inism
  */
 public class Generator {

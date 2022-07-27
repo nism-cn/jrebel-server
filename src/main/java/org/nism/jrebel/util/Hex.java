@@ -1,6 +1,8 @@
 package org.nism.jrebel.util;
 
 /**
+ * hex util
+ *
  * @author inism
  */
 public class Hex {

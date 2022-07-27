@@ -3,6 +3,11 @@ package org.nism.jrebel.core;
 import java.io.Serializable;
 import java.util.List;
 
+/**
+ * entity
+ *
+ * @author inism
+ */
 public class E implements Serializable {
 
     private long id;

@@ -2,6 +2,8 @@ package org.nism.jrebel.util;
 
 
 /**
+ * Base64 util
+ *
  * @author inism
  */
 public class Base64 {

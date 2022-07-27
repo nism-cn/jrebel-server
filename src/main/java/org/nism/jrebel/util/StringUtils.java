@@ -3,6 +3,8 @@ package org.nism.jrebel.util;
 import java.util.Iterator;
 
 /**
+ * string util
+ *
  * @author inism
  */
 public class StringUtils {
