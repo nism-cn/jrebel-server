@@ -14,9 +14,9 @@ import java.util.List;
 public class Sign {
     private String signature;
 
-    public void create(String clientRandomness, String guid, boolean offline, String validFrom, String validUntil) {
+    public void create(String clientRandomness, String guid, boolean offline, long validFrom, long validUntil) {
         //服务端随机数,如果要自己生成，务必将其写到json的serverRandomness中
-        List<String> sList = new ArrayList<>();
+        List<Object> sList = new ArrayList<>();
         sList.add(clientRandomness);
         sList.add(C.SERVER_RANDOMNESS);
         sList.add(guid);

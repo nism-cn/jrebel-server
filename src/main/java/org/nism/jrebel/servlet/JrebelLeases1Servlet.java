@@ -3,7 +3,6 @@ package org.nism.jrebel.servlet;
 import com.alibaba.fastjson2.JSONObject;
 import org.nism.jrebel.core.C;
 import org.nism.jrebel.core.E;
-import org.nism.jrebel.core.Sign;
 
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
@@ -23,7 +22,6 @@ public class JrebelLeases1Servlet extends HttpServlet {
             throw new ServletException("non-HTTP request or response");
         }
         response.setContentType(C.CONTENT_TYPE_JSON);
-        String username = request.getParameter("username");
 
         E e = new E();
         e.setServerVersion(C.SERVER_VERSION);
@@ -33,9 +31,7 @@ public class JrebelLeases1Servlet extends HttpServlet {
         e.setStatusCode(C.STATUS_CODE);
         e.setMsg(C.MSG);
         e.setStatusMessage(C.STATUS_MESSAGE);
-        if (username != null) {
-            e.setCompany(username);
-        }
+        e.setCompany(request.getParameter("username"));
         response.getWriter().print(JSONObject.toJSONString(e));
     }
 }

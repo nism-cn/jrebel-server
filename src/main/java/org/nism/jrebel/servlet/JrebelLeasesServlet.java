@@ -28,13 +28,11 @@ public class JrebelLeasesServlet extends HttpServlet {
         String guid = request.getParameter("guid");
 
         boolean offline = Boolean.parseBoolean(request.getParameter("offline"));
-        String validFrom = "0";
-        String validUntil = "0";
+        long validFrom = 0L;
+        long validUntil = 0L;
         if (offline) {
-            String clientTime = request.getParameter("clientTime");
-            long clientTimeUntil = Long.parseLong(clientTime) + 180L * 24 * 60 * 60 * 1000;
-            validFrom = clientTime;
-            validUntil = String.valueOf(clientTimeUntil);
+            validFrom = Long.parseLong(request.getParameter("clientTime"));
+            validUntil = validFrom + 180 * 24 * 60 * 60 * 1000L;
         }
         E e = new E();
         e.setServerVersion(C.SERVER_VERSION);
@@ -49,8 +47,8 @@ public class JrebelLeasesServlet extends HttpServlet {
         e.setSeatPoolType(C.SEAT_POOL_TYPE);
         e.setStatusCode(C.STATUS_CODE);
         e.setOffline(offline);
-        e.setValidFrom(Long.parseLong(validFrom));
-        e.setValidUntil(Long.parseLong(validUntil));
+        e.setValidFrom(validFrom);
+        e.setValidUntil(validUntil);
         e.setCompany(C.COMPANY);
         e.setOrderId(C.ORDER_ID);
         e.setZeroIds(C.ZERO_IDS);
