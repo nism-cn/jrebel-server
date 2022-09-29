@@ -14,7 +14,7 @@
         <jetty.version>9.4.46.v20220331</jetty.version>
         <servlet.version>4.0.1</servlet.version>
         <bcprov.version>1.70</bcprov.version>
-        <fastjson.version>2.0.8</fastjson.version>
+        <json.version>20220320</json.version>
     </properties>
 
     <dependencies>
@@ -34,9 +34,9 @@
             <version>${bcprov.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.alibaba.fastjson2</groupId>
-            <artifactId>fastjson2</artifactId>
-            <version>${fastjson.version}</version>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>${json.version}</version>
         </dependency>
     </dependencies>
 

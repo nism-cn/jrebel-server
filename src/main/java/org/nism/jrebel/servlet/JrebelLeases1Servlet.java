@@ -1,6 +1,6 @@
 package org.nism.jrebel.servlet;
 
-import com.alibaba.fastjson2.JSONObject;
+import org.json.JSONObject;
 import org.nism.jrebel.core.C;
 import org.nism.jrebel.core.E;
 
@@ -32,6 +32,6 @@ public class JrebelLeases1Servlet extends HttpServlet {
         e.setMsg(C.MSG);
         e.setStatusMessage(C.STATUS_MESSAGE);
         e.setCompany(request.getParameter("username"));
-        response.getWriter().print(JSONObject.toJSONString(e));
+        response.getWriter().print(new JSONObject(e));
     }
 }
