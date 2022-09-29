@@ -9,6 +9,10 @@ import java.util.Iterator;
  */
 public class StringUtils {
 
+    private StringUtils() {
+        throw new IllegalStateException("Utility class");
+    }
+
     public static String join(Object[] array, char separator) {
         return array == null ? null : join(array, separator, 0, array.length);
     }

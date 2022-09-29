@@ -26,7 +26,7 @@ public class Sign {
             sList.add(validUntil);
         }
         String s2 = StringUtils.join(sList, ";");
-        System.out.println(s2);
+        System.err.println(s2);
         final byte[] a2 = Generator.getKey(s2.getBytes());
         this.signature = ByteUtil.convert(a2);
     }

@@ -7,6 +7,10 @@ package org.nism.jrebel.util;
  */
 public class Hex {
 
+    private Hex() {
+        throw new IllegalStateException("Utility class");
+    }
+
     public static String bytesToHexString(byte[] src) {
         StringBuilder s = new StringBuilder();
         if (src == null || src.length <= 0) {

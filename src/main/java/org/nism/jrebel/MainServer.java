@@ -46,7 +46,7 @@ public class MainServer {
         server.setStopAtShutdown(true);
 
         server.start();
-        System.out.println("JRebel & XRebel License Server started at http://localhost:" + port);
+        System.err.println("JRebel & XRebel License Server started at http://localhost:" + port);
         server.join();
     }
 }
