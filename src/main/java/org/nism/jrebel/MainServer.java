@@ -46,11 +46,7 @@ public class MainServer {
         server.setStopAtShutdown(true);
 
         server.start();
-
-        System.out.println("License Server started at http://localhost:" + port);
-        System.out.println("JRebel 7.1  and earlier version Activation address was: http://localhost:" + port + "/{token}, with any email.");
-        System.out.println("JRebel 2018.1 and later version Activation address was: http://localhost:" + port + "/{guid} , with any email.");
-
+        System.out.println("JRebel & XRebel License Server started at http://localhost:" + port);
         server.join();
     }
 }
