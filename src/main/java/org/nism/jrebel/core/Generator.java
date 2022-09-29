@@ -18,6 +18,10 @@ public class Generator {
     private static final byte[] B = ByteUtil.convert(C.K);
     private static final BouncyCastleProvider D = new BouncyCastleProvider();
 
+    private Generator() {
+        throw new IllegalStateException("Utility class");
+    }
+
     private static PrivateKey getKey() {
         final PKCS8EncodedKeySpec spec = new PKCS8EncodedKeySpec(Generator.B);
         try {

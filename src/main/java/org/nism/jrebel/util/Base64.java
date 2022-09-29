@@ -8,6 +8,10 @@ package org.nism.jrebel.util;
  */
 public class Base64 {
 
+    private Base64() {
+        throw new IllegalStateException("Utility class");
+    }
+
     public static byte[] decode(String s) {
         return java.util.Base64.getDecoder().decode(s);
     }

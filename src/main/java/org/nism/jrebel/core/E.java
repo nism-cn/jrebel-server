@@ -29,7 +29,7 @@ public class E implements Serializable {
     private long validUntil;
     private String company;
     private String orderId;
-    private List<?> zeroIds;
+    private List<Object> zeroIds;
     private long licenseValidFrom;
     private long licenseValidUntil;
 
@@ -177,11 +177,11 @@ public class E implements Serializable {
         this.orderId = orderId;
     }
 
-    public List<?> getZeroIds() {
+    public List<Object> getZeroIds() {
         return zeroIds;
     }
 
-    public void setZeroIds(List<?> zeroIds) {
+    public void setZeroIds(List<Object> zeroIds) {
         this.zeroIds = zeroIds;
     }
 

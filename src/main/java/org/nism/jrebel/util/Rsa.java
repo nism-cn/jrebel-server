@@ -27,14 +27,16 @@ public class Rsa {
         return Rsa.sign2(content.getBytes(), C.RSA_KEY33);
     }
 
+    private Rsa() {
+        throw new IllegalStateException("Utility class");
+    }
+
     /**
      * 传入秘钥为ASN格式
      * 私钥签名程序，privateKey是私钥base64编码字符串，即私钥文件数据中，中间的主体部分
      */
     public static String sign(byte[] content, String privateKey) {
-        try {
-            byte[] keyByte = Base64.decode(privateKey);
-            ASN1InputStream in = new ASN1InputStream(keyByte);
+        try (ASN1InputStream in = new ASN1InputStream(Base64.decode(privateKey))) {
             ASN1Primitive obj = in.readObject();
             RSAPrivateKey pStruct = RSAPrivateKey.getInstance(obj);
             RSAPrivateKeySpec spec = new RSAPrivateKeySpec(pStruct.getModulus(), pStruct.getPrivateExponent());
