@@ -25,11 +25,11 @@ JrebelServer 为IDEA中 JRebel & XReble 提供激活服务 [源项目](https://g
 
 2. 更换
 
-|    调整内容   |        源项目      |         当前项目        |
-|:------------:|:------------------:|:----------------------:|
-|    base64    | commons-codec:1.10 |    java.util.Base64    |
-|     json     |    json-lib:2.4    |    fastjson2:2.0.8     |
-|    lang3     |        1.58        |       exclusion        |
+|    调整内容   |        源项目      |       当前项目        |
+|:------------:|:------------------:|:-----------------:|
+|    base64    | commons-codec:1.10 | java.util.Base64  |
+|     json     |    json-lib:2.4    | org.json:20220320 |
+|    lang3     |        1.58        |     exclusion     |
 
 # 再次开发
 

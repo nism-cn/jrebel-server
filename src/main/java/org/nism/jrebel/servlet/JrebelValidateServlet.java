@@ -1,6 +1,6 @@
 package org.nism.jrebel.servlet;
 
-import com.alibaba.fastjson2.JSONObject;
+import org.json.JSONObject;
 import org.nism.jrebel.core.C;
 import org.nism.jrebel.core.E;
 
@@ -26,6 +26,6 @@ public class JrebelValidateServlet extends HttpServlet {
         e.setSeatPoolType(C.SEAT_POOL_TYPE);
         e.setStatusCode(C.STATUS_CODE);
         e.setCompany(C.COMPANY);
-        response.getWriter().print(JSONObject.toJSONString(e));
+        response.getWriter().print(new JSONObject(e));
     }
 }

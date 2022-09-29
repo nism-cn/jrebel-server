@@ -1,6 +1,6 @@
 package org.nism.jrebel.servlet;
 
-import com.alibaba.fastjson2.JSONObject;
+import org.json.JSONObject;
 import org.nism.jrebel.core.C;
 import org.nism.jrebel.core.E;
 import org.nism.jrebel.core.Sign;
@@ -63,7 +63,7 @@ public class JrebelLeasesServlet extends HttpServlet {
             String signature = sign.getSignature();
             e.setSignature(signature);
             e.setCompany(username);
-            response.getWriter().print(JSONObject.toJSONString(e));
+            response.getWriter().print(new JSONObject(e));
         }
     }
 }
