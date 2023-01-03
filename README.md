@@ -15,21 +15,21 @@ JrebelServer 为IDEA中 JRebel & XReble 提供激活服务 [源项目](https://g
 
 1. 升级
 
-|     升级内容  |        源项目      |         当前项目        |
-|:------------:|:------------------:|:----------------------:|
-|     jdk      |        1.6         |          1.8           |
-|    maven     |        3.0-        |          3.6+          |
-|    jetty     |  8.1.2.v20120308   |    9.4.46.v20220331    |
-|   servlet    |       3.0.1        |         4.0.1          |
-| bouncycastle |        1.58        |          1.70          |
+|     jar      |     source      |      target      |
+|:------------:|:---------------:|:----------------:|
+|     jdk      |       1.6       |       1.8        |
+|    maven     |      3.0-       |       3.6+       |
+|    jetty     | 8.1.2.v20120308 | 9.4.49.v20220914 |
+|   servlet    |      3.0.1      |      4.0.1       |
+| bouncycastle |      1.58       |       1.71       |
 
 2. 更换
 
-|    调整内容   |        源项目      |       当前项目        |
-|:------------:|:------------------:|:-----------------:|
-|    base64    | commons-codec:1.10 | java.util.Base64  |
-|     json     |    json-lib:2.4    | org.json:20220320 |
-|    lang3     |        1.58        |     exclusion     |
+|  jar   |       source       |      target       |
+|:------:|:------------------:|:-----------------:|
+| base64 | commons-codec:1.10 | java.util.Base64  |
+|  json  |    json-lib:2.4    | org.json:20220320 |
+| lang3  |        1.58        |     exclusion     |
 
 # 再次开发
 
