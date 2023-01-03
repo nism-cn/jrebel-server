@@ -11,9 +11,9 @@
     <properties>
         <major.jdk>1.8</major.jdk>
         <major.encoding>UTF8</major.encoding>
-        <jetty.version>9.4.46.v20220331</jetty.version>
+        <jetty.version>9.4.49.v20220914</jetty.version>
         <servlet.version>4.0.1</servlet.version>
-        <bcprov.version>1.70</bcprov.version>
+        <bcprov.version>1.72</bcprov.version>
         <json.version>20220320</json.version>
     </properties>
 
@@ -30,7 +30,7 @@
         </dependency>
         <dependency>
             <groupId>org.bouncycastle</groupId>
-            <artifactId>bcprov-jdk15on</artifactId>
+            <artifactId>bcprov-jdk18on</artifactId>
             <version>${bcprov.version}</version>
         </dependency>
         <dependency>
