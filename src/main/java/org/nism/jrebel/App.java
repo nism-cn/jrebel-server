@@ -1,5 +1,6 @@
 package org.nism.jrebel;
 
+import org.nism.jrebel.utils.BrowseUtil;
 import org.nism.jrebel.utils.MainUtil;
 import org.noear.solon.Solon;
 
@@ -17,6 +18,8 @@ public class App {
             String port = arguments.get("p");
             port = port == null || !port.matches("\\d+") ? "8080" : port;
             app.cfg().setProperty("server.port", port);
+            BrowseUtil.open("http://localhost:" + port);
         });
     }
+
 }
