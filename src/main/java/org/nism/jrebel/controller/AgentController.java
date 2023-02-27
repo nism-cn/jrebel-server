@@ -10,6 +10,11 @@ import org.noear.solon.boot.web.MimeType;
 
 import java.io.IOException;
 
+/**
+ * AgentController
+ *
+ * @author inism
+ */
 @Controller
 @Mapping("/agent")
 public class AgentController {

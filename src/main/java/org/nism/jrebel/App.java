@@ -5,6 +5,11 @@ import org.noear.solon.Solon;
 
 import java.util.Map;
 
+/**
+ * main class
+ *
+ * @author inism
+ */
 public class App {
     public static void main(String[] args) {
         Solon.start(App.class, args, app -> {

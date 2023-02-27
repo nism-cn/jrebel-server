@@ -11,6 +11,11 @@ import org.noear.solon.boot.web.MimeType;
 import java.util.Calendar;
 import java.util.UUID;
 
+/**
+ * IndexController
+ *
+ * @author inism
+ */
 @Controller
 public class IndexController {
 
