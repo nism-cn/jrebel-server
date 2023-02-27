@@ -12,6 +12,11 @@ import org.noear.solon.boot.web.MimeType;
 
 import java.io.IOException;
 
+/**
+ * JrebelController
+ *
+ * @author inism
+ */
 @Controller
 @Mapping("/jrebel")
 public class JrebelController {

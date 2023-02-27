@@ -8,7 +8,7 @@ JrebelServer 为IDEA中 JRebel & XReble 提供激活服务 [源项目](https://g
 
 # 优点
 
-1. **轻量:** 采用jetty嵌入式作为容器, 整体Jar包小于10M.
+1. **轻量:** 采用solon作为容器, 体积更小,更轻量(约1M).
 2. **简单:** 命令式启动. 启动成功后, 在浏览器中直接进行傻瓜式拷贝.
 
 # 与源项目差异
@@ -25,11 +25,19 @@ JrebelServer 为IDEA中 JRebel & XReble 提供激活服务 [源项目](https://g
 
 2. 更换
 
-|  jar   |       source       |      target       |
-|:------:|:------------------:|:-----------------:|
-| base64 | commons-codec:1.10 | java.util.Base64  |
-|  json  |    json-lib:2.4    | org.json:20220320 |
-| lang3  |        1.58        |     exclusion     |
+|      jar      |       source       |      target      |
+|:-------------:|:------------------:|:----------------:|
+|    base64     | commons-codec:1.10 | java.util.Base64 |
+|     json      | org.json:20220320  |    exclusion     |
+|     lang3     |        1.58        |    exclusion     |
+|     jetty     |  8.1.2.v20120308   |    exclusion     |
+|  bouncycastle |       1.71         |    exclusion     |
+
+3. 升级历史  
+#### 1.0.0  升级JDK8,优化算法  
+#### 1.0.1  替换fastjson->org.json更轻量,更安全  
+#### 1.0.2  升级jar包  
+#### 2.0.0  【重大升级】除去bouncycastle采用JDK内置算法,jetty->solon更轻量 (整体约1M)
 
 # 再次开发
 

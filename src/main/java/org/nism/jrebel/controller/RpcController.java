@@ -10,6 +10,11 @@ import org.noear.solon.boot.web.ContextBase;
 
 import java.io.IOException;
 
+/**
+ * RpcController
+ *
+ * @author inism
+ */
 @Controller
 @Mapping("/rpc")
 public class RpcController {
