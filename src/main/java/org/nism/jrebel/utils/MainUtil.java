@@ -1,4 +1,4 @@
-package org.nism.jrebel.util;
+package org.nism.jrebel.utils;
 
 import java.util.HashMap;
 import java.util.Map;

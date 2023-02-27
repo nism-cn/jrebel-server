@@ -1,13 +1,13 @@
-package org.nism.jrebel.util;
+package org.nism.jrebel.utils;
 
 /**
  * hex util
  *
  * @author inism
  */
-public class Hex {
+public class HexUtil {
 
-    private Hex() {
+    private HexUtil() {
         throw new IllegalStateException("Utility class");
     }
 

@@ -4,39 +4,29 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.nism.jrebel</groupId>
-    <artifactId>jrebel-server</artifactId>
+    <parent>
+        <groupId>org.noear</groupId>
+        <artifactId>solon-parent</artifactId>
+        <version>2.1.4</version>
+        <relativePath/>
+    </parent>
+
+    <groupId>org.nism</groupId>
+    <artifactId>jrebel</artifactId>
     <version>1.0</version>
 
+    <packaging>jar</packaging>
+
     <properties>
-        <major.jdk>1.8</major.jdk>
-        <major.encoding>UTF8</major.encoding>
-        <jetty.version>9.4.49.v20220914</jetty.version>
-        <servlet.version>4.0.1</servlet.version>
-        <bcprov.version>1.71</bcprov.version>
-        <json.version>20220320</json.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.ver>1.8</java.ver>
     </properties>
 
     <dependencies>
         <dependency>
-            <groupId>org.eclipse.jetty</groupId>
-            <artifactId>jetty-webapp</artifactId>
-            <version>${jetty.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <version>${servlet.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.bouncycastle</groupId>
-            <artifactId>bcprov-jdk18on</artifactId>
-            <version>${bcprov.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.json</groupId>
-            <artifactId>json</artifactId>
-            <version>${json.version}</version>
+            <groupId>org.noear</groupId>
+            <artifactId>solon-api</artifactId>
         </dependency>
     </dependencies>
 
@@ -48,9 +38,10 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
                 <configuration>
-                    <source>${major.jdk}</source>
-                    <target>${major.jdk}</target>
-                    <encoding>${major.encoding}</encoding>
+                    <compilerArgument>-parameters</compilerArgument>
+                    <source>${java.ver}</source>
+                    <target>${java.ver}</target>
+                    <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
 
@@ -59,15 +50,16 @@
                 <artifactId>maven-assembly-plugin</artifactId>
                 <version>3.3.0</version>
                 <configuration>
-                    <archive>
-                        <manifest>
-                            <mainClass>org.nism.jrebel.MainServer</mainClass>
-                        </manifest>
-                    </archive>
+                    <finalName>JrebelServer</finalName>
+                    <appendAssemblyId>false</appendAssemblyId>
                     <descriptorRefs>
                         <descriptorRef>jar-with-dependencies</descriptorRef>
                     </descriptorRefs>
-                    <appendAssemblyId>false</appendAssemblyId>
+                    <archive>
+                        <manifest>
+                            <mainClass>org.nism.jrebel.App</mainClass>
+                        </manifest>
+                    </archive>
                 </configuration>
                 <executions>
                     <execution>

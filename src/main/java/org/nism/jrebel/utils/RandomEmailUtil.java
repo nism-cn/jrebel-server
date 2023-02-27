@@ -1,4 +1,4 @@
-package org.nism.jrebel.util;
+package org.nism.jrebel.utils;
 
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
@@ -9,7 +9,7 @@ import java.util.Random;
  *
  * @author inism
  */
-public class RandomEmail {
+public class RandomEmailUtil {
 
     private static final char[] BASE_CHAR = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'm', 'n', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
     private static final int[] BASE_NUM = {6, 7, 8, 9, 10};
@@ -24,7 +24,7 @@ public class RandomEmail {
         }
     }
 
-    private RandomEmail() {
+    private RandomEmailUtil() {
         throw new IllegalStateException("Utility class");
     }
 
