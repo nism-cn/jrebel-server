@@ -5,7 +5,7 @@ JrebelServer 为IDEA中 JRebel & XReble 提供激活服务 [源项目](https://g
 
 # 使用
 
-👉 [点我查看](https://gitee.com/nism/jrebel-server/releases) 👈
+👉 [点我查看](https://gitee.com/nism/jrebel-server/wikis/pages) 👈
 
 # 优点
 
