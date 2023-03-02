@@ -20,9 +20,8 @@ public class BrowseUtil {
         if (osName.startsWith("Windows")) {
             Runtime.getRuntime().exec("rundll32 url.dll,FileProtocolHandler " + url);
         } else if (osName.startsWith("Mac OS")) {
-            Class<?> fileMgr = Class.forName("com.apple.eio.FileManager");
-            Method openURL = fileMgr.getDeclaredMethod("openURL", String.class);
-            openURL.invoke(null, url);
+            Method method = Class.forName("com.apple.eio.FileManager").getDeclaredMethod("openURL", String.class);
+            method.invoke(null, url);
         } else {
             String browser = null;
             for (String b : BROWSERS) {
