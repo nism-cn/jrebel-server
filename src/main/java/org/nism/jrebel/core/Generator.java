@@ -17,9 +17,8 @@ public class Generator {
     }
 
     public static byte[] getKey(final byte[] array) {
-        try {
+        try (ObjectInputStream in = new ObjectInputStream(Generator.class.getResourceAsStream("/rsa.key"))) {
             final Signature instance = Signature.getInstance("SHA1withRSA");
-            ObjectInputStream in = new ObjectInputStream(Generator.class.getResourceAsStream("/rsa.key"));
             PrivateKey rsa = (PrivateKey) in.readObject();
             instance.initSign(rsa);
             instance.update(array);
