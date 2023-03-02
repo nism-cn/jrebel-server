@@ -1,6 +1,7 @@
 # 简介
 
-JrebelServer 为IDEA中 JRebel & XReble 提供激活服务 [源项目](https://gitee.com/gsls200808/JetBrainsLicenseServerforJava)
+JrebelServer 为IDEA中 JRebel & XReble 提供激活服务 [源项目](https://gitee.com/gsls200808/JetBrainsLicenseServerforJava)  
+*注！！！ 本服务仅限 jrebel<=2022.4.1 且 idea<2022.3*
 
 # 使用
 
