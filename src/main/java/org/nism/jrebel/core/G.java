@@ -6,18 +6,16 @@ import java.security.PrivateKey;
 import java.security.Signature;
 
 /**
- * jrebel generator
- *
  * @author inism
  */
-public class Generator {
+public class G {
 
-    private Generator() {
-        throw new IllegalStateException("Utility class");
+    private G() {
+        throw new IllegalStateException();
     }
 
     public static byte[] getKey(final byte[] array) {
-        try (ObjectInputStream in = new ObjectInputStream(Generator.class.getResourceAsStream("/rsa.key"))) {
+        try (ObjectInputStream in = new ObjectInputStream(G.class.getResourceAsStream("/rsa.key"))) {
             final Signature instance = Signature.getInstance("SHA1withRSA");
             PrivateKey rsa = (PrivateKey) in.readObject();
             instance.initSign(rsa);

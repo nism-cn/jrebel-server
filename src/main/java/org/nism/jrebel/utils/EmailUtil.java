@@ -9,7 +9,7 @@ import java.util.Random;
  *
  * @author inism
  */
-public class RandomEmailUtil {
+public class EmailUtil {
 
     private static final char[] BASE_CHAR = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'm', 'n', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
     private static final int[] BASE_NUM = {6, 7, 8, 9, 10};
@@ -24,11 +24,11 @@ public class RandomEmailUtil {
         }
     }
 
-    private RandomEmailUtil() {
-        throw new IllegalStateException("Utility class");
+    private EmailUtil() {
+        throw new IllegalStateException();
     }
 
-    public static String get() {
+    public static String random() {
         StringBuilder e = new StringBuilder();
 
         int l = BASE_NUM[random.nextInt(BASE_NUM.length)];

@@ -15,13 +15,9 @@ import java.security.spec.RSAPrivateKeySpec;
 public class RsaUtil {
 
     private RsaUtil() {
-        throw new IllegalStateException("Utility class");
+        throw new IllegalStateException();
     }
 
-    /**
-     * 传入秘钥为ASN格式
-     * 私钥签名程序，privateKey是私钥base64编码字符串，即私钥文件数据中，中间的主体部分
-     */
     public static String sign(String content) {
         try {
             KeyFactory keyFactory = KeyFactory.getInstance("RSA");
@@ -31,11 +27,27 @@ public class RsaUtil {
             signature.initSign(priKey);
             signature.update(content.getBytes());
             byte[] signed = signature.sign();
-            return HexUtil.bytesToHexString(signed);
+            return convert(signed);
         } catch (Exception e) {
             e.printStackTrace();
             return null;
         }
+    }
+
+    public static String convert(byte[] src) {
+        StringBuilder s = new StringBuilder();
+        if (src == null || src.length <= 0) {
+            return null;
+        }
+        for (byte b : src) {
+            int v = b & 0xFF;
+            String hv = Integer.toHexString(v);
+            if (hv.length() < 2) {
+                s.append(0);
+            }
+            s.append(hv);
+        }
+        return s.toString();
     }
 
 }

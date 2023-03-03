@@ -4,8 +4,6 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * entity
- *
  * @author inism
  */
 public class E implements Serializable {

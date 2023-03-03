@@ -12,13 +12,18 @@ import java.util.Map;
  * @author inism
  */
 public class App {
+
     public static void main(String[] args) {
         Solon.start(App.class, args, app -> {
             Map<String, String> arguments = MainUtil.parseArguments(args);
             String port = arguments.get("p");
             port = port == null || !port.matches("\\d+") ? "8080" : port;
             app.cfg().setProperty("server.port", port);
-            BrowseUtil.open("http://localhost:" + port);
+            try {
+                BrowseUtil.open("http://localhost:" + port);
+            } catch (Exception e) {
+                System.err.println("can not auto open browse!");
+            }
         });
     }
 

@@ -11,7 +11,7 @@ import java.util.Map;
 public class MainUtil {
 
     private MainUtil() {
-        throw new IllegalStateException("Utility class");
+        throw new IllegalStateException();
     }
 
     public static Map<String, String> parseArguments(String[] args) {

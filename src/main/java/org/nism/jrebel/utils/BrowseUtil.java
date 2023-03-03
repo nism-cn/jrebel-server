@@ -12,7 +12,7 @@ public class BrowseUtil {
     public static final String[] BROWSERS = {"firefox", "opera", "konqueror", "epiphany", "mozilla", "netscape"};
 
     private BrowseUtil() {
-        throw new IllegalStateException("Utility class");
+        throw new IllegalStateException();
     }
 
     public static void open(String url) throws Exception {

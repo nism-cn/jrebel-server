@@ -1,20 +1,17 @@
 package org.nism.jrebel.core;
 
 
-import org.nism.jrebel.utils.ByteUtil;
-
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.List;
 
 /**
- * sign
- *
  * @author inism
  */
-public class Sign {
+public class S {
 
-    private Sign() {
-        throw new IllegalStateException("Utility class");
+    private S() {
+        throw new IllegalStateException();
     }
 
     public static String getSignature(String clientRandomness, String guid, boolean offline, long validFrom, long validUntil) {
@@ -33,8 +30,12 @@ public class Sign {
             s.append(s1).append(';');
         }
         s.deleteCharAt(s.length() - 1);
-        final byte[] a = Generator.getKey(s.toString().getBytes());
-        return ByteUtil.convert(a);
+        final byte[] a = G.getKey(s.toString().getBytes());
+        return convert(a);
+    }
+
+    private static String convert(final byte[] b) {
+        return b == null ? null : new String(Base64.getEncoder().encode(b), C.UTF8);
     }
 
 }

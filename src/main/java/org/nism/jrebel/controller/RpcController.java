@@ -36,13 +36,12 @@ public class RpcController {
     @Mapping("/obtainTicket.action")
     @Produces(C.CONTENT_TYPE_HTML)
     public String obtainTicket(ContextBase ctx, String salt, String userName) throws IOException {
-        String prolongationPeriod = "607875500";
         if (salt == null || userName == null) {
             HTTPServer.Response response = (HTTPServer.Response) ctx.response();
             response.sendError(403);
             return null;
         } else {
-            String xmlContent = "<ObtainTicketResponse><message></message><prolongationPeriod>" + prolongationPeriod + "</prolongationPeriod><responseCode>OK</responseCode><salt>" + salt + "</salt><ticketId>1</ticketId><ticketProperties>licensee=" + userName + "\tlicenseType=0\t</ticketProperties></ObtainTicketResponse>";
+            String xmlContent = "<ObtainTicketResponse><message></message><prolongationPeriod>607875500</prolongationPeriod><responseCode>OK</responseCode><salt>" + salt + "</salt><ticketId>1</ticketId><ticketProperties>licensee=" + userName + "\tlicenseType=0\t</ticketProperties></ObtainTicketResponse>";
             String xmlSignature = RsaUtil.sign(xmlContent);
             return "<!-- " + xmlSignature + " -->\n" + xmlContent;
         }

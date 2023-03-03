@@ -1,6 +1,6 @@
 package org.nism.jrebel.controller;
 
-import org.nism.jrebel.utils.RandomEmailUtil;
+import org.nism.jrebel.utils.EmailUtil;
 import org.noear.solon.annotation.Controller;
 import org.noear.solon.annotation.Get;
 import org.noear.solon.annotation.Mapping;
@@ -37,7 +37,7 @@ public class IndexController {
                 "<h1 class='b w n p2'><img style='margin-top: 7px' src='" + FAVICON + "'> JRebel & XRebel License Server!</h1>" +
                 "<p><img style='margin-top: 7px' src='" + EG_IMG + "'></p>" +
                 "<p>URL: 👉 <a href='javascript:void(0)' onclick='fn(this)' title='copy and refresh!'>" + ctx.uri() + UUID.randomUUID() + "</a> 👈</p>" +
-                "<p>email: 👉 <a href='javascript:void(0)' onclick='fn(this)' title='copy and refresh!'>" + RandomEmailUtil.get() + "</a> 👈</p>" +
+                "<p>email: 👉 <a href='javascript:void(0)' onclick='fn(this)' title='copy and refresh!'>" + EmailUtil.random() + "</a> 👈</p>" +
                 "<div class='b w f'>&copy;2022-" + Calendar.getInstance().get(Calendar.YEAR) + "</div>" +
                 "</body>" + HTML_JS + "</html>";
     }

@@ -2,7 +2,7 @@ package org.nism.jrebel.controller;
 
 import org.nism.jrebel.core.C;
 import org.nism.jrebel.core.E;
-import org.nism.jrebel.core.Sign;
+import org.nism.jrebel.core.S;
 import org.noear.solon.annotation.Controller;
 import org.noear.solon.annotation.Mapping;
 import org.noear.solon.annotation.Produces;
@@ -56,7 +56,7 @@ public class JrebelController {
         e.setZeroIds(C.ZERO_IDS);
         e.setLicenseValidFrom(C.LICENSE_VALID_FROM);
         e.setLicenseValidUntil(C.LICENSE_VALID_UNTIL);
-        String signature = Sign.getSignature(randomness, guid, offline, validFrom, validUntil);
+        String signature = S.getSignature(randomness, guid, offline, validFrom, validUntil);
         e.setSignature(signature);
         e.setCompany(username);
         return e;
