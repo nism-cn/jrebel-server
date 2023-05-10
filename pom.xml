@@ -19,16 +19,6 @@
     <dependencies>
         <dependency>
             <groupId>org.noear</groupId>
-            <artifactId>solon</artifactId>
-            <version>${solon.ver}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.noear</groupId>
-            <artifactId>solon.boot</artifactId>
-            <version>${solon.ver}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.noear</groupId>
             <artifactId>solon.boot.jlhttp</artifactId>
             <version>${solon.ver}</version>
         </dependency>

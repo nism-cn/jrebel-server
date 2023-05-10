@@ -6,7 +6,6 @@ import org.nism.jrebel.core.S;
 import org.noear.solon.annotation.Controller;
 import org.noear.solon.annotation.Mapping;
 import org.noear.solon.annotation.Produces;
-import org.noear.solon.boot.jlhttp.HTTPServer;
 import org.noear.solon.boot.web.ContextBase;
 import org.noear.solon.boot.web.MimeType;
 
@@ -25,8 +24,7 @@ public class JrebelController {
     @Produces(MimeType.APPLICATION_JSON_UTF8_VALUE)
     public E leases(ContextBase ctx, String randomness, String username, String guid, boolean offline, Long clientTime) throws IOException {
         if (randomness == null || username == null || guid == null) {
-            HTTPServer.Response response = (HTTPServer.Response) ctx.response();
-            response.sendError(403);
+            ctx.status(403);
             return null;
         }
 
