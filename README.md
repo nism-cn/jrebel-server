@@ -15,5 +15,14 @@ JrebelServer 为IDEA中 JRebel & XReble 提供激活服务 [源项目](https://g
 
 👉 [点我查看](https://gitee.com/nism/jrebel-server/wikis/pages) 👈
 
+# 注意:
+
+- V2.X.X 使用的是jdk内置加解密jdk版本可能不兼容.
+- 已测试版本
+- OracleJDK 1.8.202
+- OpenJDK 11 17
+- 如碰无法注册的情况可以使用 V1.X.X版本
+- 欢迎大家提BUG
+
 # 本项目仅提供学术研究，禁止商用行为！！！
 开源不易. fork代码请注明原作者. 欢迎优秀的开发者提供宝贵的意见. 谢谢!!!
