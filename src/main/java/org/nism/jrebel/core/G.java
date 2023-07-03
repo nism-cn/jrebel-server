@@ -15,7 +15,8 @@ public class G {
     }
 
     public static byte[] getKey(final byte[] array) {
-        try (ObjectInputStream in = new ObjectInputStream(G.class.getResourceAsStream("/rsa.key"))) {
+        String path = System.getProperty("java.vm.name").contains("HotSpot") ? "/rsa.key" : "/rsa.openjdk.key";
+        try (ObjectInputStream in = new ObjectInputStream(G.class.getResourceAsStream(path))) {
             final Signature instance = Signature.getInstance("SHA1withRSA");
             PrivateKey rsa = (PrivateKey) in.readObject();
             instance.initSign(rsa);
