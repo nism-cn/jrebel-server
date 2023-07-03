@@ -27,6 +27,21 @@
             <artifactId>solon.serialization.snack3</artifactId>
             <version>${solon.ver}</version>
         </dependency>
+
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-core</artifactId>
+            <scope>test</scope>
+            <version>5.8.18</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bcprov-jdk18on</artifactId>
+            <scope>test</scope>
+            <version>1.72</version>
+        </dependency>
+
     </dependencies>
 
     <build>
