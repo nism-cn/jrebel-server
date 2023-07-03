@@ -98,7 +98,7 @@ public class RSADemo {
     }
 
     public static byte[] formatPrivateKeyPKCS1ToPKCS8(byte[] pkcs1PrivateKeyByte) {
-        AlgorithmIdentifier algorithmIdentifier = new AlgorithmIdentifier(PKCSObjectIdentifiers.pkcs8ShroudedKeyBag);
+        AlgorithmIdentifier algorithmIdentifier = new AlgorithmIdentifier(PKCSObjectIdentifiers.rsaEncryption);
         RSAPrivateKey privateKey = RSAPrivateKey.getInstance(pkcs1PrivateKeyByte);
         //另一种方式
         ASN1Sequence privateKey1 = ASN1Sequence.getInstance(pkcs1PrivateKeyByte);
