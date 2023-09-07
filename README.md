@@ -6,7 +6,7 @@
 <p align="center">
     <a href="https://gitee.com/nism/jrebel-server/stargazers"><img src="https://gitee.com/nism/jrebel-server/badge/star.svg?theme=dark"></a>
     <a href="https://gitee.com/nism/jrebel-server"><img src="https://img.shields.io/badge/JrebelServer-v2.0.3-%233b5d3f"></a>
-    <a href="https://gitee.com/nism/freedom-generator/blob/master/LICENSE"><img src="https://img.shields.io/github/license/mashape/apistatus.svg"></a>
+    <a href="https://gitee.com/nism/jrebel-server/blob/main/LICENSE"><img src="https://img.shields.io/github/license/mashape/apistatus.svg"></a>
     <a href="http://solon.noear.org/"><img src="https://img.shields.io/badge/solon-2+-%23ff8c90"></a>
 </p>
 
